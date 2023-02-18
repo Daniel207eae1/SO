@@ -20,6 +20,7 @@ int main()
     }
   
     else {
+        wait(NULL);
         pid1 = fork();
         if (pid1 == 0) {
             int b=0;
@@ -44,7 +45,7 @@ int main()
             }
 
             else {
-                
+                wait(NULL);
                 printf("parent --> pid = %d\n", getpid());
             }
         }
