@@ -44,7 +44,7 @@ void Comer(int num){
 
 int main(){
     pthread_t thread[NUM_FILOSOFOS];
-    sem_init(&filosofos,0,NUM_FILOSOFOS);
+    sem_init(&filosofos,0,1);
     int ids[NUM_FILOSOFOS];
 
     for (int i = 0; i < NUM_FILOSOFOS; i++)
