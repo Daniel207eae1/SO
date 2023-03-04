@@ -43,8 +43,9 @@ void Comer(int num){
 }
 
 int main(){
+    int fi = NUM_FILOSOFOS/2;
     pthread_t thread[NUM_FILOSOFOS];
-    sem_init(&filosofos,0,1);
+    sem_init(&filosofos,0,fi);
     int ids[NUM_FILOSOFOS];
 
     for (int i = 0; i < NUM_FILOSOFOS; i++)
@@ -60,6 +61,7 @@ int main(){
     for(int i = 0; i < NUM_FILOSOFOS;i++){
         pthread_join(thread[i],NULL);
     }
+
     for (int i = 0; i < NUM_FILOSOFOS; i++)
         sem_destroy(&cubiertos[i]);
 
